@@ -291,7 +291,6 @@ public class DecodePlayer implements IPlayer, TextureView.SurfaceTextureListener
 
     private void waitForPause(){
         while (playTaskStatus== PLAY_TASK_STATUS.PLAY_TASK_PAUSED) {
-            Log.i("ClementDebug", "waitForPause: ");
             sleep(SHORT_SLEEP_TME_IN_MS*5);
         }
     }
@@ -399,9 +398,7 @@ public class DecodePlayer implements IPlayer, TextureView.SurfaceTextureListener
 
     @Override
     public void pause() {
-        if (playTaskStatus== PLAY_TASK_STATUS.PLAY_TASK_RUNNING
-                && playTaskStatus != PLAY_TASK_STATUS.PLAY_TASK_STOPING
-                && playTaskStatus != PLAY_TASK_STATUS.PLAY_TASK_STOPPED) {
+        if (playTaskStatus== PLAY_TASK_STATUS.PLAY_TASK_RUNNING) {
             playTaskStatus = PLAY_TASK_STATUS.PLAY_TASK_PAUSED;
         }
     }
